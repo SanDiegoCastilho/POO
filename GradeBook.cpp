@@ -13,6 +13,10 @@ using std::endl;
 //Declarando a classe GradeBook.
 class GradeBook{
 public:
+	//O construtor inicializa courseName com uma string passada como argumento.
+	GradeBook(string name){
+		setCourseName(name);
+	}
 
 	//Função responsável por guardar o nome do curso.
 	void setCourseName(string name){
@@ -34,18 +38,12 @@ private:
 };
 
 int main(){
-	string nameOfCourse;
-	GradeBook myGradeBook;
 
-	cout << "O nome inicial do Curso é: " << myGradeBook.getCourseName() << endl;
+	GradeBook gradebook1("Ciencia da Computação");
+	GradeBook gradebook2("Engenharia da Computação");
 
-	cout << "\nDigite o novo nome do curso: ";
-	getline(cin, nameOfCourse);
-	cout << endl;
-
-	myGradeBook.setCourseName(nameOfCourse);
-
-	myGradeBook.displayMessage();
+	cout << "O nome inicial do gradebook1 é: " << gradebook1.getCourseName() << endl;
+	cout << "O nome inicial do gradebook2 é: " << gradebook2.getCourseName() << endl;
 
 	return 0;
 }
