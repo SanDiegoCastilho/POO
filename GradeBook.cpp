@@ -13,8 +13,19 @@ GradeBook::GradeBook(string name){
 }
 
 //Função responsável por guardar o nome do curso.
-void GradeBook::setCourseName(string name){
-	courseName = name; //Armazena o nome do curso no objeto.
+void GradeBook::setCourseName(string name){ //Valida e Armazena o nome do curso no objeto.
+	
+	if (name.length() <= 26){
+		courseName = name; //Armazena o nome do curso no objeto.
+	}
+
+	if (name.length() > 26){
+		courseName = name.substr(0, 25); //Armazena os primeiros 25 caracteres
+
+		cout << "Name \"" << name << "\" exceeds maximum length (25). \n" 
+			 << "Limiting courseName to first 25 charracteres. \n" << endl; 
+	}
+
 }
 
 //Função responsável por obter o nome do curso.

@@ -10,7 +10,7 @@ using std::endl;
 
 int main(){
 
-	GradeBook gradebook1("Ciencia da Computação");
+	GradeBook gradebook1("Ciencia da Computaçãoãoãoãoãoãoãoãoãoãoãoãoãoãoãoãoão");
 	GradeBook gradebook2("Engenharia da Computação");
 
 	cout << "O nome inicial do gradebook1 é: " << gradebook1.getCourseName() << endl;
