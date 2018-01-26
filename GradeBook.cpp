@@ -8,8 +8,9 @@ using std::cout;
 using std::endl;
 
 //O construtor inicializa courseName com uma string passada como argumento.
-GradeBook::GradeBook(string name){
-	setCourseName(name);
+GradeBook::GradeBook(string nameCourse, string nameInstructor){
+	setCourseName(nameCourse);
+	setInstructorName(nameInstructor);
 }
 
 //Função responsável por guardar o nome do curso.
@@ -27,14 +28,23 @@ void GradeBook::setCourseName(string name){ //Valida e Armazena o nome do curso 
 	}
 
 }
+	
+//Guarda o nome do instrutor.
+void GradeBook::setInstructorName(string name){
+	instructorName = name;
+}
 
 //Função responsável por obter o nome do curso.
 string GradeBook::getCourseName (){
 	return courseName; //Retorna o courseName do objeto.
 }
 
-//Função que imprime uma mensagem na tela.
-void displayMessage(){
-	cout << "Welcome To The Grade Book!\n" << endl;
+//Retorna o nome do instrutor;
+string GradeBook::getInstructorName(){
+	return instructorName;
+}
 
+//Função que imprime uma mensagem na tela.
+void GradeBook::displayMessage(){
+	cout << "Welcome To The Grade Book!\n" << endl;
 }
