@@ -25,6 +25,9 @@ public:
 	//Função que imprime uma mensagem na tela.
 	void displayMessage();
 
+	//Calcula a média da classe de acordo com as 10 notas inseridas pelo usuário.
+	void determineClassAverage();
+
 private:
 	string courseName;
 	string instructorName;

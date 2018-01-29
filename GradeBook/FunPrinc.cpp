@@ -21,5 +21,7 @@ int main(){
 	cout << "O nome do curso 2 é: " << gradebook2.getCourseName() << endl;
 	cout << "O nome do professor é: "<< gradebook2.getInstructorName() << endl;
 
+	gradebook1.determineClassAverage();
+
 	return 0;
 }
