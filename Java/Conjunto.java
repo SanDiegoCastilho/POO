@@ -29,7 +29,7 @@ class Conjunto{
 			elementos[indice] = n;
 			indice++;
 
-		}else if(indice = tamanho){
+		}else if(indice == tamanho){
 
 			System.out.println("ERRO: Conjunto cheio.");
 
@@ -56,5 +56,21 @@ class Conjunto{
 		}
 
 		return false;
+	}
+
+	//Função responsável por verificar se um conjunto é subconjunto de outro.
+	boolean checkSubset(Conjunto C){
+		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
+		//pertence ao segundo conjunto e rretorna um valor correspondente.
+		
+		for (int i = 0; i < indice; i++) {
+			int aux = elementos[i]; //Variável auxiliar representa cada elemente do primeiro conjunto a cada iteração.
+
+			if (!C.checkExistence(aux)){
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
