@@ -28,21 +28,12 @@ class Conjunto{
 
 			elementos[indice] = n;
 			indice++;
+		}
 
-		}else if(indice == tamanho){
+		if (!checkExistence(n) && indice < tamanho){
 
-			System.out.println("ERRO: Conjunto cheio.");
-
-		}else{
-
-			if (checkExistence(n)){
-				System.out.println("ERRO: Elemento repetido!");
-
-			}else{
-
-				elementos[indice] = n;
-				indice++;
-			}
+			elementos[indice] = n;
+			indice++;
 		}
 	}
 
@@ -62,15 +53,44 @@ class Conjunto{
 	boolean checkSubset(Conjunto C){
 		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
 		//pertence ao segundo conjunto e rretorna um valor correspondente.
-		
-		for (int i = 0; i < indice; i++) {
-			int aux = elementos[i]; //Variável auxiliar representa cada elemente do primeiro conjunto a cada iteração.
+	
 
-			if (!C.checkExistence(aux)){
+		for (int i = 0; i < indice; i++) {
+
+			if (!C.checkExistence(elementos[i])){
 				return false;
 			}
 		}
 
 		return true;
 	}
+
+	//Função responsável pela união de dois conjuntos.
+	Conjunto union(Conjunto C){
+
+		int aux = 0;
+
+		//Verifica quantos elementos repetidos os conjuntos tem.
+		for (int i = 0; i < indice; i++) {
+			if (C.checkExistence(elementos[i])) {
+				aux ++;
+			}
+		}
+
+		//Istancia um Conjunto Uniῶao de tamanho proporcional.
+		Conjunto ConjUnion = new Conjunto(indice + C.indice - aux);
+
+		//Adiciona os elementos dos conjuntos no ConjuntoUnião.
+		for (int i = 0; i < indice; i++) {
+			ConjUnion.setElement(elementos[i]);
+		}
+
+		for (int j = 0; j < C.indice; j++) {
+			ConjUnion.setElement(C.elementos[j]);
+		}
+
+		return ConjUnion;
+	}
+
+
 }
