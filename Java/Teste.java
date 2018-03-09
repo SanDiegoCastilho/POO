@@ -11,12 +11,12 @@ class Teste{
 
 		C2.setElement(14);
 		C2.setElement(20);
-		C2.setElement(1);
-		C2.setElement(3);
+		C2.setElement(4);
+		C2.setElement(5);
 		C2.setElement(9);
 		C2.setElement(7);
 
-		Conjunto C3 = C1.union(C2);
+		Conjunto C3 = C1.inter(C2);
 
 		for (int i = 0; i < C3.indice; i++) {
 			System.out.println(C3.elementos[i]);

@@ -24,12 +24,7 @@ class Conjunto{
 	//Função responsável por guardar um elemento no Conjunto.
 	void setElement(int n){
 
-		if (indice == 0){
-
-			elementos[indice] = n;
-			indice++;
-		}
-
+		//Verifica se existe espaço no conjunto e se nῶao tem elementos repetidos para inserir.
 		if (!checkExistence(n) && indice < tamanho){
 
 			elementos[indice] = n;
@@ -92,5 +87,31 @@ class Conjunto{
 		return ConjUnion;
 	}
 
+	//Função responsável pela intersecçῶao de dois conjuntos.
+	Conjunto inter(Conjunto C){
+		//Inicializa um vetor que guardará os valores comuns aos conjuntos.
+		//e uma variável que auxilia na contagem e armazenagem do tamanho dos conjuntos.
+		int[] NRepetidos = new int[C.indice];
+		int aux = 0;
 
+		//Verifica quantos e quais os elementos comuns aos conjuntos.
+		for (int i = 0; i < indice; i++) {
+			if (C.checkExistence(elementos[i])){
+
+				NRepetidos[aux] = elementos[i];
+				aux++;
+			}
+		}
+
+		//Istancia ConjInter.
+		Conjunto ConjInter = new Conjunto(aux);
+
+		//Preenche o ConjInter com os valores comuns aos dois conjunntos.
+		for (int i = 0; i < ConjInter.tamanho; i++) {
+
+			ConjInter.setElement(NRepetidos[i]);
+		}
+
+		return ConjInter;
+	}
 }
