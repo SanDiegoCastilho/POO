@@ -1,4 +1,4 @@
-//San Diego - 08/03/2018 - 08:21.
+//San Diego - 10/03/2018 - 20:26.
 //Classe Conjunto, representar u conjunto como uma classe Java.
 
 public class Conjunto{
