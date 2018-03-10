@@ -6,8 +6,8 @@ class Teste{
 
 		C1.setElement(9);
 		C1.setElement(7);
-		C1.setElement(5);
-		C1.setElement(4);
+		C1.setElement(8);
+		C1.setElement(99);
 
 		C2.setElement(14);
 		C2.setElement(20);
@@ -16,7 +16,7 @@ class Teste{
 		C2.setElement(9);
 		C2.setElement(7);
 
-		Conjunto C3 = C1.inter(C2);
+		Conjunto C3 = C1.dif(C2);
 
 		for (int i = 0; i < C3.indice; i++) {
 			System.out.println(C3.elementos[i]);

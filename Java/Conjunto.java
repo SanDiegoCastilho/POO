@@ -1,14 +1,14 @@
 //San Diego - 08/03/2018 - 08:21.
 //Classe Conjunto, representar u conjunto como uma classe Java.
 
-class Conjunto{
+public class Conjunto{
 
-	int indice;
-	int tamanho;
-	int[] elementos;
+	public int indice;
+	public int tamanho;
+	public int[] elementos;
 
 	//Construtor da Classe Conjunto
-	Conjunto(int tamanho){
+	public Conjunto(int tamanho){
 
 		this.tamanho = tamanho;
 		elementos = new int[tamanho];
@@ -16,13 +16,13 @@ class Conjunto{
 	}
 
 	//Construtor de tamanho padrão.
-	Conjunto(){
+	public Conjunto(){
 
 		this(10);
 	}
 
 	//Função responsável por guardar um elemento no Conjunto.
-	void setElement(int n){
+	public void setElement(int n){
 
 		//Verifica se existe espaço no conjunto e se nῶao tem elementos repetidos para inserir.
 		if (!checkExistence(n) && indice < tamanho){
@@ -33,7 +33,7 @@ class Conjunto{
 	}
 
 	//Função resposável por verificar a existência de um conjunto;
-	boolean checkExistence(int n){
+	public boolean checkExistence(int n){
 		//Verifica a existencia um elemento no Conjunto.
 		for (int i = 0; i < indice; i++) {
 				
@@ -45,7 +45,7 @@ class Conjunto{
 	}
 
 	//Função responsável por verificar se um conjunto é subconjunto de outro.
-	boolean checkSubset(Conjunto C){
+	public boolean checkSubset(Conjunto C){
 		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
 		//pertence ao segundo conjunto e rretorna um valor correspondente.
 	
@@ -61,7 +61,7 @@ class Conjunto{
 	}
 
 	//Função responsável pela união de dois conjuntos.
-	Conjunto union(Conjunto C){
+	public Conjunto union(Conjunto C){
 
 		int aux = 0;
 
@@ -73,7 +73,7 @@ class Conjunto{
 		}
 
 		//Istancia um Conjunto Uniῶao de tamanho proporcional.
-		Conjunto ConjUnion = new Conjunto(indice + C.indice - aux);
+	public Conjunto ConjUnion = new Conjunto(indice + C.indice - aux);
 
 		//Adiciona os elementos dos conjuntos no ConjuntoUnião.
 		for (int i = 0; i < indice; i++) {
@@ -88,7 +88,7 @@ class Conjunto{
 	}
 
 	//Função responsável pela intersecçῶao de dois conjuntos.
-	Conjunto inter(Conjunto C){
+	public Conjunto inter(Conjunto C){
 		//Inicializa um vetor que guardará os valores comuns aos conjuntos.
 		//e uma variável que auxilia na contagem e armazenagem do tamanho dos conjuntos.
 		int[] NRepetidos = new int[C.indice];
@@ -113,5 +113,40 @@ class Conjunto{
 		}
 
 		return ConjInter;
+	}
+
+	//Função resposável pelo cálculo da diferença entre dois conjuntos.
+	public Conjunto dif(Conjunto C){
+
+		boolean aux = true;
+
+
+		Conjunto ConjInter = inter(C);
+
+		//Instância do Conjunto diferença.
+		Conjunto ConjDif = new Conjunto(tamanho - ConjInter.tamanho);
+
+		//Verifica se para cada elemento do conjunto atual está no conjunto intersecção.
+		for (int i = 0; i < indice; i++) {
+			for (int j = 0; j < ConjInter.tamanho; j++) {
+			
+
+				if (elementos[i] == ConjInter.elementos[j]) {
+
+					aux = false;
+
+				}
+			}
+
+			//Insere no conjunto da diferença aqueles elementos que não estão no conjunto da intersecção.
+			if (aux) {
+				ConjDif.setElement(elementos[i]);
+			}
+			
+			aux = true;
+
+		}
+
+		return ConjDif;
 	}
 }
