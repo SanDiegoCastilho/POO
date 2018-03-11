@@ -122,5 +122,14 @@ public class FunPrinc{
 
 		}
 
+
+		// E - Diferença entre CInteiros e CPares.
+		Conjunto ConDif = CInteiros.dif(Cpares);
+
+		System.out.println("Elementos do conjunto diferença de CInteiros e CPares");
+		for (int i = 0; i < ConDif.tamanho; i++) {
+			System.out.println(ConDif.elementos[i]);
+		}
+
 	}
 }
