@@ -1,4 +1,4 @@
-//San Diego - 10/03/2018 - 20:26.
+//San Diego - 10/03/2018 - 21:26.
 //Classe Conjunto, representar u conjunto como uma classe Java.
 
 public class Conjunto{
@@ -73,7 +73,7 @@ public class Conjunto{
 		}
 
 		//Istancia um Conjunto Uniῶao de tamanho proporcional.
-	public Conjunto ConjUnion = new Conjunto(indice + C.indice - aux);
+		Conjunto ConjUnion = new Conjunto(indice + C.indice - aux);
 
 		//Adiciona os elementos dos conjuntos no ConjuntoUnião.
 		for (int i = 0; i < indice; i++) {

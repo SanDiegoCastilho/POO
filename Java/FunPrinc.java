@@ -1,4 +1,4 @@
-//San Diego - 10/03/2018 - 20:26.
+//San Diego - 10/03/2018 - 21:26.
 //Função principal - testes da classe Conjunto.
 
 public class FunPrinc{
@@ -124,7 +124,7 @@ public class FunPrinc{
 
 
 		// E - Diferença entre CInteiros e CPares.
-		Conjunto ConDif = CInteiros.dif(Cpares);
+		Conjunto ConDif = CInteiros.dif(CPares);
 
 		System.out.println("Elementos do conjunto diferença de CInteiros e CPares");
 		for (int i = 0; i < ConDif.tamanho; i++) {
