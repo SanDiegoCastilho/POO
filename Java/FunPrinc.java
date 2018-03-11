@@ -93,6 +93,23 @@ public class FunPrinc{
 		}
 
 
+		// C - União de CPares e CImpares é igual a CInteiros.
+		Conjunto ConjUni = CPares.union(CImpares);
+		boolean  aux = true; 
+
+		for (int i = 0; i < ConjUni.tamanho; i++) {
+			if (!CInteiros.checkExistence(ConjUni.elementos[i])) {
+				aux = false;
+			}
+		}
+
+		if (aux) {
+			System.out.println("CImpares + CPares == CInteiros");
+
+		}else{
+			System.out.println("CImpares + CPares != CInteiros");
+			
+		}
 
 	}
 }
