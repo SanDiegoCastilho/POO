@@ -71,7 +71,26 @@ public class FunPrinc{
 		}
 
 		// B - A pertinência dos conjuntos CPares, CImpares e CPrimos no conjunto CInteiros.
-		
+		if (CPares.checkSubset(CInteiros)) {
+			System.out.println("CPares é subconjunto de CInteiros.");
+
+		}else{
+			System.out.println("CPares não é conjunto de CInteiros.");
+		}
+
+		if (CImpares.checkSubset(CInteiros)) {
+			System.out.println("CImpares é subconjunto de CInteiros.");
+
+		}else{
+			System.out.println("CImpares não é conjunto de CInteiros.");
+		}
+
+		if (CPrimos.checkSubset(CInteiros)) {
+			System.out.println("CPrimos é subconjunto de CInteiros.");
+
+		}else{
+			System.out.println("CPrimos não é conjunto de CInteiros.");
+		}
 
 
 
