@@ -108,7 +108,18 @@ public class FunPrinc{
 
 		}else{
 			System.out.println("CImpares + CPares != CInteiros");
-			
+
+		}
+
+		// D - Intersecção dos conjuntos CInteiros e CPares é vazia.
+		Conjunto ConjInt = CInteiros.inter(CPares);
+
+		if (ConjInt.tamanho > 0) {
+			System.out.println("CInteiros intersecção CPares != Vazio");
+
+		}else{
+			System.out.println("CInteiros intersecção CPares == Vazio");
+
 		}
 
 	}
