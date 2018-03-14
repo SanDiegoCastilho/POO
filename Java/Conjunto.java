@@ -151,7 +151,6 @@ public class Conjunto{
 			}
 			
 			aux = true;
-
 		}
 
 		return ConjDif;
