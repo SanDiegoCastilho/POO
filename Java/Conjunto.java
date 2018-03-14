@@ -3,9 +3,9 @@
 
 public class Conjunto{
 
-	public int indice;
-	public int tamanho;
-	public int[] elementos;
+	private int indice;
+	private int tamanho;
+	private int[] elementos;
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
@@ -32,12 +32,19 @@ public class Conjunto{
 		}
 	}
 
+	//Retorna um valor específico
+	public int getElement(int i){
+		if (i > 0 && i < indice) {
+			return elementos[i]; 
+		}
+	}
+
 	//Função resposável por verificar a existência de um conjunto;
 	public boolean checkExistence(int n){
 		//Verifica a existencia um elemento no Conjunto.
 		for (int i = 0; i < indice; i++) {
 				
-			if (n == elementos[i])
+			if (n == getElement(i))
 				return true;
 		}
 
@@ -52,7 +59,7 @@ public class Conjunto{
 
 		for (int i = 0; i < indice; i++) {
 
-			if (!C.checkExistence(elementos[i])){
+			if (!C.checkExistence(getElement(i))){
 				return false;
 			}
 		}
@@ -67,7 +74,7 @@ public class Conjunto{
 
 		//Verifica quantos elementos repetidos os conjuntos tem.
 		for (int i = 0; i < indice; i++) {
-			if (C.checkExistence(elementos[i])) {
+			if (C.checkExistence(getElement(i))) {
 				aux ++;
 			}
 		}
@@ -77,11 +84,11 @@ public class Conjunto{
 
 		//Adiciona os elementos dos conjuntos no ConjuntoUnião.
 		for (int i = 0; i < indice; i++) {
-			ConjUnion.setElement(elementos[i]);
+			ConjUnion.setElement(getElement(i));
 		}
 
 		for (int j = 0; j < C.indice; j++) {
-			ConjUnion.setElement(C.elementos[j]);
+			ConjUnion.setElement(C.getElement(j));
 		}
 
 		return ConjUnion;
@@ -96,9 +103,9 @@ public class Conjunto{
 
 		//Verifica quantos e quais os elementos comuns aos conjuntos.
 		for (int i = 0; i < indice; i++) {
-			if (C.checkExistence(elementos[i])){
+			if (C.checkExistence(getElement(i))){
 
-				NRepetidos[aux] = elementos[i];
+				NRepetidos[aux] = getElement(i);
 				aux++;
 			}
 		}
@@ -131,7 +138,7 @@ public class Conjunto{
 			for (int j = 0; j < ConjInter.tamanho; j++) {
 			
 
-				if (elementos[i] == ConjInter.elementos[j]) {
+				if (elementos[i] == ConjInter.getElement(j)) {
 
 					aux = false;
 
@@ -140,7 +147,7 @@ public class Conjunto{
 
 			//Insere no conjunto da diferença aqueles elementos que não estão no conjunto da intersecção.
 			if (aux) {
-				ConjDif.setElement(elementos[i]);
+				ConjDif.setElement(getElement(i));
 			}
 			
 			aux = true;
